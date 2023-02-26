@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 
 class WelcomeFragment : Fragment() {
 
+    //this fragment welcomes the user and states the rules of the game
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 

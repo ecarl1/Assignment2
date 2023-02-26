@@ -11,16 +11,17 @@
     <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:layout_marginTop="32dp"
         android:text="@string/start" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
-        android:text="@string/welcome_text" />
+        android:text="Welcome to the the four in a row game! The rules of the game are of your colored tiles in a row and you can only put your tile on a space that is not already filled" />
 
 
 </LinearLayout>

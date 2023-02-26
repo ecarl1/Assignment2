@@ -11,6 +11,8 @@ import androidx.navigation.findNavController
 
 
 class MessageFragment : Fragment() {
+
+    //this fragment has the user ender their name when is transferred to the next fragment
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
