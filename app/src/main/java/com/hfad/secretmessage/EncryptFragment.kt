@@ -104,7 +104,7 @@ class EncryptFragment : Fragment() {
         //toasts for different situations
         val invalid = Toast.makeText(context, "INVALID MOVE", Toast.LENGTH_SHORT)
         val blue = Toast.makeText(context, "BLUE WON", Toast.LENGTH_SHORT)
-        val red = Toast.makeText(context, "RED WON", Toast.LENGTH_SHORT)
+        val redd = Toast.makeText(context, "RED WON", Toast.LENGTH_SHORT)
         val tie = Toast.makeText(context, "TIE", Toast.LENGTH_SHORT)
 
         //code for if the game ends
@@ -127,54 +127,47 @@ class EncryptFragment : Fragment() {
             var win = checkForWinner()
             //if statement for check or the winner
             //this code is implented in two areas based on if the computer wins for the player wins
-            if(win == GameConstants.TIE){
-                tie.show()
-                if (reset != null) {
-                    //this makes the reset button visible
-                    reset.isInvisible = false
+                if (win == GameConstants.TIE) {
+                    tie.show()
+                    if (reset != null) {
+                        //this makes the reset button visible
+                        reset.isInvisible = false
+                    }
                 }
-            }
-            if(win == GameConstants.RED_WON){
-                red.show()
-                if (reset != null) {
-                    reset.isInvisible = false
-                }
-            }
-            if(win == GameConstants.BLUE_WON){
-                blue.show()
-                if (reset != null) {
-                    reset.isInvisible = false
+                if (win == GameConstants.RED_WON) {
+                    redd.show()
+                    if (reset != null) {
+                        reset.isInvisible = false
+                    }
                 }
 
-            }
+
+
 
             //gets the computer move
-            val computer = computerMove()
-            setMove(2,computer)
-            buttons[computer].text = "B"
-            buttons[computer].setBackgroundColor(Color.BLUE)
 
+            if(checkForWinner() == 0) {
+                val computer = computerMove()
+                setMove(2, computer)
+                buttons[computer].text = "B"
+                buttons[computer].setBackgroundColor(Color.BLUE)
+            }
             win = checkForWinner()
-
-            if(win == GameConstants.TIE){
-                tie.show()
-                if (reset != null) {
-                    reset.isInvisible = false
-                }
-            }
-            if(win == GameConstants.RED_WON){
-                red.show()
-                if (reset != null) {
-                    reset.isInvisible = false
-                }
-            }
-            if(win == GameConstants.BLUE_WON){
-                blue.show()
-                if (reset != null) {
-                    reset.isInvisible = false
+                if (win == GameConstants.TIE) {
+                    tie.show()
+                    if (reset != null) {
+                        reset.isInvisible = false
+                    }
                 }
 
-            }
+                if (win == GameConstants.BLUE_WON) {
+                    blue.show()
+                    if (reset != null) {
+                        reset.isInvisible = false
+                    }
+
+                }
+
 
         }
         //shows the invalid move
